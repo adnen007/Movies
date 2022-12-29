@@ -54,6 +54,7 @@ const Slider = ({ list }) => {
           return (
             <div className="slide" key={e.id} onClick={() => onSlideClick(e.id)}>
               <img src={`https://image.tmdb.org/t/p/w500/${e.backdrop_path}`} alt="" />
+              <div className="cover"></div>
             </div>
           );
         })}

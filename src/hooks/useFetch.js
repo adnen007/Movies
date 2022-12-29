@@ -8,7 +8,7 @@ const useFetch = (url, { query, page, primary_release_year, include_adult }) => 
     const fetchData = async () => {
       dispatch({ type: "LOADING", playload: true });
       try {
-        const { data } = await searchMovies(url, { params: { query, page, primary_release_year, include_adult } });
+        const { data } = await searchMovies(url, { params: { query: query === "" ? "^^" : query, page, primary_release_year, include_adult } });
         dispatch({ type: "FETCH", playload: data });
         dispatch({ type: "FIRST_PAGE_NUMBER" });
         window.scrollTo(0, 0);
