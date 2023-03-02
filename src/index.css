@@ -18,7 +18,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background-color: var(--mainColor);
+  background-color: #ffe765;
 }
 a {
   text-decoration: none;
@@ -116,7 +116,7 @@ ul {
 .trending .slider .right {
   position: absolute;
   top: 0;
-  color: #ffffffa2;
+  color: #ffffffca;
   font-size: 40px;
   z-index: 1;
   width: 26%;
@@ -174,7 +174,7 @@ ul {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: hsl(0deg 0% 0% / 20%);
+  background-color: hsl(0deg 0% 0% / 10%);
 }
 @media (min-width: 768px) {
   .trending .slide img {
@@ -184,7 +184,7 @@ ul {
 }
 /* normal slider */
 .slider-c {
-  padding-top: 38px;
+  padding-top: 70px;
   margin: auto;
   width: fit-content;
 }
@@ -209,7 +209,7 @@ ul {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #ffffffa2;
+  color: #ffffffba;
   font-size: 26px;
   z-index: 1;
   width: 23%;
@@ -485,8 +485,7 @@ header .search-icon svg {
 .details .loading {
   min-height: 85vh;
 }
-.details .container {
-}
+
 .details .content {
   display: flex;
   flex-direction: column;
@@ -495,6 +494,7 @@ header .search-icon svg {
 @media (min-width: 768px) {
   .details .content {
     flex-direction: row;
+    align-items: flex-start;
     gap: 35px;
   }
 }
@@ -504,11 +504,13 @@ header .search-icon svg {
 }
 @media (min-width: 768px) {
   .details .content .image {
+    padding: 11px;
     width: calc(100% / 3);
   }
 }
 .details .content .image img {
   width: 100%;
+  display: block;
 }
 .details .info {
   max-width: 100%;
@@ -574,7 +576,7 @@ header .search-icon svg {
   }
 }
 .details .videos .video {
-  margin: 0 10px;
+  margin: 0 5px;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -587,7 +589,8 @@ header .search-icon svg {
 }
 @media (min-width: 768px) {
   .details .videos .video iframe {
-    width: auto;
+    width: 190px;
+    height: 110px;
   }
 }
 
@@ -633,9 +636,9 @@ header .search-icon svg {
   height: 53.5vh;
 }
 footer {
-  background: var(--forthColor);
+  background: black;
   padding: 15px 0;
-  margin-top: 20px;
+  margin-top: 40px;
   color: white;
   display: flex;
   justify-content: center;

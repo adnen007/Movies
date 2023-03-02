@@ -51,7 +51,6 @@ const Home = () => {
       const { data: data2 } = await searchMovies("/movie/top_rated");
       const { data: data3 } = await searchMovies("/movie/popular");
       const { data: data4 } = await searchMovies("/movie/upcoming");
-      console.log(data.results);
 
       dispatch({ type: "PLAYING_NOW", playload: data.results });
       dispatch({ type: "TOP", playload: data2.results });

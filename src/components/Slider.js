@@ -9,7 +9,6 @@ const Slider = ({ list }) => {
   const { dispatch } = useMainContext();
   const navigator = useNavigate();
   const onRowClick = (d) => {
-    console.log(x, d);
     if (window.innerWidth >= 768) {
       if (x + d > 0) {
         setX(-324.8);
