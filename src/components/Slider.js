@@ -8,22 +8,22 @@ const Slider = ({ list }) => {
   const [x, setX] = useState(0);
   const { dispatch } = useMainContext();
   const navigator = useNavigate();
-  const onRowClick = (d) => {
+  const onRowClick = (step) => {
     if (window.innerWidth >= 768) {
-      if (x + d > 0) {
-        setX(-324.8);
-      } else if (x + d < -324.8) {
+      if (x + step <= 0 && x + step >= -Math.abs(step * 16)) {
+        setX(x + step);
+      } else if (x + step > 0) {
+        setX(step * -16);
+      } else if (x + step < -Math.abs(step * 16)) {
         setX(0);
-      } else {
-        setX(x + d);
       }
     } else {
-      if (x + d > 0) {
-        setX(-725.4);
-      } else if (x + d < -725.4) {
+      if (x + step <= 0 && x + step >= -Math.abs(step * 17)) {
+        setX(x + step);
+      } else if (x + step > 0) {
+        setX(step * -17);
+      } else if (x + step < -Math.abs(step * 17)) {
         setX(0);
-      } else {
-        setX(x + d);
       }
     }
   };
@@ -42,13 +42,19 @@ const Slider = ({ list }) => {
   });
   return (
     <div className="slider">
-      <div className="left" onClick={() => onRowClick(window.innerWidth >= 768 ? 20.3 : 40.3)}>
+      <div
+        className="left"
+        onClick={() => onRowClick(window.innerWidth >= 768 ? 25.25 : 52)}
+      >
         <BsChevronDoubleLeft />
       </div>
-      <div className="right" onClick={() => onRowClick(window.innerWidth >= 768 ? -20.3 : -40.3)}>
+      <div
+        className="right"
+        onClick={() => onRowClick(window.innerWidth >= 768 ? -25.25 : -52)}
+      >
         <BsChevronDoubleRight />
       </div>
-      <div style={{ transform: `translateX(${x}vw)` }}>
+      <div style={{ transform: `translateX(${x}%)` }}>
         {list.map((e) => {
           return (
             <div className="slide" key={e.id} onClick={() => onSlideClick(e.id)}>
@@ -63,3 +69,10 @@ const Slider = ({ list }) => {
 };
 
 export default Slider;
+
+// fist of all i used the width of the document (vw) to set the width of the slider
+// also i used the vw to set the width of the image
+// also i have a div inside the slider has all the slides
+// and all what i do cause i know the with of the slider the slide and the div i only tranlite
+// that div by one slide
+// i use the 'd' just to m

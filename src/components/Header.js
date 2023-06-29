@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { BsSearch } from "react-icons/bs";
+// import { BsSearch } from "react-icons/bs";
 import { MdLocalMovies } from "react-icons/md";
 import SearchBar from "./SearchBar";
 
@@ -8,9 +8,10 @@ const Header = () => {
   return (
     <header>
       <div className="container">
-        <div className="icon">
+        <div className="logo">
           <Link to="/">
-            <MdLocalMovies /> <span>FIND</span>_MOVIES
+            <MdLocalMovies />
+            MOVIES
           </Link>
         </div>
 

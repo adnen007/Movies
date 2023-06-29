@@ -11,7 +11,7 @@ const Shared = () => {
   return (
     <BrowserRouter>
       <AppContext>
-        <div className="shared">
+        <div className="shared ">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

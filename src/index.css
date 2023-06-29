@@ -8,17 +8,16 @@
 }
 
 :root {
-  --mainColor: #9bf2ea;
-  --secondColor: #41bfb3;
-  --thirdColor: #2a8c82;
-  --forthColor: #275950;
-  --fifthColor: #260101;
-  /* scroll-behavior: smooth; */
+  --mainBack: #000;
+  --mainColor: #fff;
+  --headersColor: #f5c518;
+  --lightBlack: #3c3a3a;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Nunito", sans-serif;
-  background-color: #e9d87a;
+  background-color: var(--mainBack);
 }
 a {
   text-decoration: none;
@@ -67,7 +66,7 @@ ul {
 }
 .loading > div {
   transform: rotate(0deg);
-  border: var(--forthColor) 4px solid;
+  border: var(--mainColor) 4px solid;
   width: 100px;
   height: 100px;
   border-left-color: transparent;
@@ -94,6 +93,9 @@ ul {
   justify-content: space-between;
   height: 100vh;
 }
+.lightBlack {
+  background-color: var(--lightBlack);
+}
 .home {
   padding-top: 22px;
   padding-bottom: 30px;
@@ -102,11 +104,13 @@ ul {
 }
 
 .home .trending .slider {
-  width: 91vw;
+  width: 100%;
   margin-top: 14px;
   overflow-x: hidden;
   position: relative;
   margin-top: 24px;
+  background-color: var(--lightBlack);
+  padding: 1% 0;
 }
 .home .trending h2 {
   font-size: 20px;
@@ -114,6 +118,7 @@ ul {
   margin: auto;
   margin-top: 24px;
   width: fit-content;
+  color: var(--headersColor);
 }
 
 .trending .slider .left,
@@ -159,15 +164,21 @@ ul {
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .trending .slider .slide:not(:last-child) {
-    margin-right: 1vw;
+    margin-right: 2%;
+  }
+  .trending .slider .slide {
+    width: 49%;
+    border-radius: 2px;
+    overflow: hidden;
   }
 }
 .trending .slide img {
-  width: 92vw;
+  width: 100%;
   height: 140px;
   object-fit: cover;
   display: block;
@@ -178,34 +189,38 @@ ul {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: hsl(0deg 0% 0% / 10%);
+  /* background-color: hsl(0deg 0% 0% / 10%); */
 }
 @media (min-width: 768px) {
   .trending .slide img {
-    width: 45vw;
+    width: 100%;
     height: 200px;
   }
 }
 /* normal slider */
 .slider-c {
-  padding-top: 70px;
+  /* margin: 0 35px; */
+  padding-top: 65px;
   margin: auto;
-  width: fit-content;
+  width: 94%;
 }
 .slider-c h2 {
   font-size: 19px;
   font-weight: bolder;
+  color: var(--headersColor);
 }
 
 .slider-c .slider {
-  width: 80.3vw;
+  width: 100%;
   overflow-x: hidden;
   position: relative;
   margin-top: 18px;
+  padding: 1% 0;
+  background-color: var(--lightBlack);
 }
 @media (min-width: 768px) {
   .slider-c .slider {
-    width: 80.9vw;
+    width: 100%;
   }
 }
 .slider-c .slider .left,
@@ -250,19 +265,32 @@ ul {
   transition: 0.4s;
 }
 
+.slider-c .slider .slide {
+  width: 48%;
+  border-radius: 2px;
+  overflow: hidden;
+}
 .slider-c .slider .slide:not(:last-child) {
-  margin-right: 0.3vw;
+  margin-right: 4%;
 }
 
+@media (min-width: 768px) {
+  .slider-c .slider .slide {
+    width: 24.25%;
+  }
+  .slider-c .slider .slide:not(:last-child) {
+    margin-right: 1%;
+  }
+}
 .slider-c > div .slide img {
   display: block;
-  width: 40vw;
+  width: 100%;
   height: 100px;
   object-fit: cover;
 }
 @media (min-width: 768px) {
   .slider-c > div .slide img {
-    width: 20vw;
+    width: 100%;
     height: 120px;
     object-fit: cover;
     display: block;
@@ -285,7 +313,7 @@ header .container {
     gap: 0px;
   }
 }
-header .icon {
+header .logo {
   display: flex;
   align-items: center;
   margin-right: 50px;
@@ -295,12 +323,20 @@ header .icon {
   cursor: pointer;
 }
 
-header .icon a {
-  color: black;
+header .logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 30px;
+  color: var(--mainBack);
+  border-radius: 10px;
+  background-color: var(--headersColor);
+  font-size: 18px;
 }
-header .icon svg {
-  margin-right: 10px;
-  color: #a01242;
+
+header .logo svg {
+  font-size: 26px;
 }
 
 header .search-icon {
@@ -319,8 +355,10 @@ header .search-icon svg {
 }
 
 .movies-list {
-  margin: 40px 0 50px;
-  color: var(--fifthColor);
+  background-color: #1f1f1f;
+
+  margin-top: 40px;
+  padding-bottom: 50px;
 }
 .movies-list .loading {
   min-height: 55vh;
@@ -435,7 +473,6 @@ header .search-icon svg {
 .box img {
   width: 100%;
   object-fit: cover;
-  background-color: var(--secondColor);
 }
 .box .no-image {
   width: 100%;
@@ -443,7 +480,7 @@ header .search-icon svg {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--thirdColor);
+  background-color: var(--lightBlack);
   padding: 0px 20px;
 }
 .box .no-image p:first-child {
@@ -454,7 +491,7 @@ header .search-icon svg {
   margin-top: 56px;
   text-align: center;
   font-size: 18px;
-  color: var(--mainColor);
+  color: #9bf2ea;
 }
 .box .info {
   position: absolute;
@@ -482,7 +519,6 @@ header .search-icon svg {
 /* start details */
 
 .details {
-  /* background-color: var(--mainColor); */
   padding: 40px 0px 60px;
   max-width: 100vw;
 }
@@ -527,23 +563,23 @@ header .search-icon svg {
 .details .info .title {
   font-size: 26px;
   font-weight: 700;
-  color: var(--fifthColor);
+  color: var(--mainColor);
 }
 .details .info p {
   margin-top: 15px;
   line-height: 27px;
-  color: var(--forthColor);
+  color: var(--mainColor);
   font-weight: 600;
 }
 .details .info b {
   display: block;
   margin-top: 19px;
+  color: var(--headersColor);
 }
 .details .info .btn {
   display: block;
   margin-top: 30px;
-  color: white;
-  background-color: var(--forthColor);
+  color: #5799ef;
   width: fit-content;
   padding: 8px 15px;
   border-radius: 10px;
@@ -558,6 +594,7 @@ header .search-icon svg {
   margin: auto;
   text-transform: uppercase;
   width: fit-content;
+  color: var(--mainColor);
 }
 @media (min-width: 768px) {
   .details .trailers h2 {
@@ -640,12 +677,15 @@ header .search-icon svg {
   height: 53.5vh;
 }
 footer {
-  background: black;
+  background: var(--lightBlack);
   padding: 15px 0;
   margin-top: 40px;
   color: white;
   display: flex;
   justify-content: center;
+}
+.movies-list + footer {
+  margin-top: 0;
 }
 footer p {
   width: fit-content;
@@ -662,10 +702,10 @@ but grid-template-columns: repeat(auto-fill, minmax(290px, 400px));
 will not reduce to add more item in the row but it will only add more items if the current items
  got thier max width and there is space to more items.
 
-minmax(290px,1fr) by default it will put the width 1fr (the available space) but guess what if you 
-can put more items that mean the available space will reduce and that will let you to add more 
+minmax(290px,1fr) by default it will put the width 1fr (the available space) but guess what if you
+can put more items that mean the available space will reduce and that will let you to add more
 item.
 opposite of the minmax(290px,400px) it will give by default it will put 400px as width
-and the available space will be fixed. 
+and the available space will be fixed.
 
 */
