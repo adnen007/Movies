@@ -1,7 +1,3 @@
-Got it! Here’s your updated **README** with your notes about maintenance and your motivation for building the project:
-
----
-
 ## 🎬 CineScope
 
 **CineScope** is a modern web app for discovering and exploring movies. It uses The Movie Database (TMDb) API to fetch real-time information on top-rated films, latest releases, trailers, and reviews — all in a clean and interactive UI.
